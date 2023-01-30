@@ -37,6 +37,27 @@ fn HomePage(cx: Scope) -> impl IntoView {
 
     view! { cx,
         <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        <button on:click=on_click>"Click Me: " {move || count.get()}</button>
+        <SelectNumber />
+    }
+}
+
+#[component]
+pub fn SelectNumber(cx: Scope) -> impl IntoView {
+    view! { cx,
+        "Select number:"
+        <select name="number_from_select">
+            <For
+                each=|| [1, 2, 3, 4]
+                key=|&number| number
+                view=move |number| {
+                    view! { cx,
+                        <option value=number>
+                            {number}
+                        </option>
+                    }
+                }
+            />
+        </select>
     }
 }

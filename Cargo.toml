@@ -13,11 +13,11 @@ console_error_panic_hook = "0.1"
 console_log = "0.2"
 cfg-if = "1"
 leptos = { git = "https://github.com/leptos-rs/leptos", default-features = false, features = [
-  "serde",
+  "serde", "stable",
 ] }
-leptos_meta = { git = "https://github.com/leptos-rs/leptos", default-features = false }
+leptos_meta = { git = "https://github.com/leptos-rs/leptos", default-features = false, features = ["stable"] }
 leptos_actix = { git = "https://github.com/leptos-rs/leptos", optional = true }
-leptos_router = { git = "https://github.com/leptos-rs/leptos", default-features = false }
+leptos_router = { git = "https://github.com/leptos-rs/leptos", default-features = false, features = ["stable"] }
 log = "0.4"
 simple_logger = "4"
 wasm-bindgen = "0.2"
@@ -48,10 +48,10 @@ style-file = "style/main.scss"
 #
 # Optional. Env: LEPTOS_ASSETS_DIR.
 assets-dir = "assets"
-# The IP and port (ex: 127.0.0.1:3000) where the server serves the content. Use it in your server setup.
-site-addr = "127.0.0.1:3000"
+# The IP and port (ex: 127.0.0.1:8000) where the server serves the content. Use it in your server setup.
+site-addr = "127.0.0.1:8000"
 # The port to use for automatic reload monitoring
-reload-port = 3001
+reload-port = 8001
 # [Optional] Command to use when running end2end tests. It will run in the end2end dir.
 #   [Windows] for non-WSL use "npx.cmd playwright test"
 #   This binary name can be checked in Powershell with Get-Command npx
